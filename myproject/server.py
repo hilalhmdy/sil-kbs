@@ -10,5 +10,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
-  model.init()
-  app.run(debug=True)
+    model.init()
+    app.run(debug=True)

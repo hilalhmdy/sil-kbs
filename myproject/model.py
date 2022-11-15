@@ -21,11 +21,11 @@ def predict(data):
 def init():
     isModelExist = exists(MODEL_FILE_PATH)
     if (isModelExist):
-        print(">> Model is ready to action:", MODEL_FILE_PATH)
+        print("=====", "Model is ready to action:", MODEL_FILE_PATH, "=====")
         print()
         return
 
-    print("Begin to train DIABETES KBS Model")
+    print("=====", "Begin to train DIABETES KBS Model", "=====")
     print()
     df = pandas.read_csv(DATA_FILE_PATH)
     df = df.drop(['id'], axis=1)
@@ -70,5 +70,5 @@ def init():
     print("Dumping model...")
     print()
     pickle.dump(dt_clf_gini, open(MODEL_FILE_PATH, 'wb'))
-    print("Done. Model saved to:", MODEL_FILE_PATH)
+    print("=====", "Done. Model saved to:", MODEL_FILE_PATH, "=====")
     print()
