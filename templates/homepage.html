@@ -7,7 +7,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link
     rel="stylesheet"
-    href="../assets/css/main.css"
+    href="../static/css/main.css"
     />
     <title>Diabetes Generator</title>
   </head>
@@ -24,11 +24,11 @@
             <div>
               <form
                 class="predict-form"
-                action="{{ url_for('index') }}"
+                action="/"
                 method="post"
               >
                 <label for="race">Race</label><br>
-                <select id="race" name="race">
+                <select id="race" name="race"> 
                   <option value="0">AfricanAmerican</option>
                   <option value="1">Asian</option>
                   <option value="2">Caucasian</option>
