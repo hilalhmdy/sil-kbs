@@ -11,6 +11,7 @@ def homepage():
         payload = request.form.to_dict()
         payload = list(payload.values())
         payload = list(map(int, payload))
+        print(payload)
         result = model.predict(payload)
         if (result == 0):
             prediction = False
