@@ -1,0 +1,223 @@
+@import url("http://fonts.cdnfonts.com/css/athelas");
+
+body {
+  margin: 0;
+  font-family: "Athelas", sans-serif;
+}
+
+.landing_screen {
+  background-image: url("../img/doc.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.index__title {
+  width: 100%;
+  font-size: 44px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn_container {
+  width: fit-content;
+
+  font-family: "Athelas", sans-serif;
+}
+
+.landing_container {
+  width: fit-content;
+  position: relative;
+  top: 22%;
+  left: 15%;
+}
+
+.png_container {
+  width: 100%;
+}
+
+.landing_tag1 {
+  font-family: "Athelas", sans-serif;
+  font-size: 40px;
+
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.landing_tag2 {
+  font-family: "Athelas", sans-serif;
+  font-size: 22.5px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.check_btn,
+.check_btn::after {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: max-content;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #000 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #ff1212;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.left_right {
+  display: inline-block;
+
+  justify-content: space-between;
+}
+
+.right {
+  margin-right: 40px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+input {
+  margin-top: 3px;
+  margin-bottom: 5px;
+  width: 250px;
+  height: 20px;
+}
+
+select{
+  margin-top: 3px;
+  margin-bottom: 5px;
+  width: 260px;
+  height: 20px;
+}
+.check_btn:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "ALTERNATE TEXT";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #000 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+.check_btn:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+.predict_btn {
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+
+  font-family: "Athelas", sans-serif;
+
+  transition: 400ms;
+}
+
+.predict_btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  margin: 10px 40px;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49,
+  .button-49:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+/* cursor: pointer;
+
+  font-size: 28px;
+  font-weight: 500;
+
+  border: 1px solid black;
+  padding: 3px;
+
+  border-radius: 5px; */
+
+.doc_png {
+  width: 100%;
+}

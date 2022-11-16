@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+    rel="stylesheet"
+    href="../assets/css/main.css"
+    />
+    <title>Diabetes Generator</title>
+  </head>
+
+  <body>
+    <!-- This is an example component -->
+
+    <div class="container">
+        <div class="index__title">
+          Deabet condition in US Country
+        </div>
+        <div class="left_right">
+          <div class="left">
+            <div>
+              <form
+                class="predict-form"
+                action="{{ url_for('index') }}"
+                method="post"
+              >
+                <label for="race">Race</label><br>
+                <select id="race" name="race">
+                  <option value="0">AfricanAmerican</option>
+                  <option value="1">Asian</option>
+                  <option value="2">Caucasian</option>
+                  <option value="3">Hispanic</option>
+                  <option value="4">Other</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="gender">Gender</label><br>
+                <select id="gender" name="gender">
+                  <option value="0">Famale</option>
+                  <option value="1">Male</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="age">Age</label><br>
+                <select id="age" name="age">
+                  <option value="0">30 years or younger</option>
+                  <option value="1">30-60 years</option>
+                  <option value="2">Over 60 years</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="admission_source_id">Admission Source ID</label><br>
+                <select id="admission_source_id" name="admission_source_id">
+                  <option value="0">Emergency</option>
+                  <option value="1">Other</option>
+                  <option value="2">Referral</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="medical_specialty">Medical Specialty</label><br>
+                <select id="medical_specialty" name="medical_specialty">
+                  <option value="0">Cardiology</option>
+                  <option value="1">Emergency/Trauma</option>
+                  <option value="2">Family/GeneralPractice</option>
+                  <option value="3">InternalMedicine</option>
+                  <option value="4">Missing</option>
+                  <option value="5">Other</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="primary_diagnosis">Primary Diagnosis</label><br>
+                <select id="primary_diagnosis" name="primary_diagnosis">
+                  <option value="0">Diabetes</option>
+                  <option value="1">Genitourinary Issues</option>
+                  <option value="2">Musculoskeletal Issues</option>
+                  <option value="3">Other</option>
+                  <option value="4">Respiratory Issues</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="max_glu_serum">Max Gluserum</label><br>
+                <select id="max_glu_serum" name="max_glu_serum">
+                  <option value="0">>200</option>
+                  <option value="1">>300</option>
+                  <option value="2">None</option>
+                  <option value="2">Norm</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="'A1Cresult'">A1Cresult</label><br>
+                <select id="'A1Cresult'" name="'A1Cresult'">
+                  <option value="0">>7</option>
+                  <option value="1">>7</option>
+                  <option value="2">None</option>
+                  <option value="3">Norm</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="insulin">Insulin</label><br>
+                <select id="insulin" name="insulin">
+                  <option value="0">Down</option>
+                  <option value="1">No</option>
+                  <option value="2">Steady</option>
+                  <option value="3">Up</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="change">Change</label><br>
+                <select id="change" name="change">
+                  <option value="0">Ch</option>
+                  <option value="1">No</option>
+                </select>
+                <br>
+                <br>
+                
+                <label for="diabetesMed">DiabetesMed</label><br>
+                <select id="diabetesMed" name="diabetesMed">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="readmit_30_days">Readmit 30 Days</label><br>
+                <select id="readmit_30_days" name="readmit_30_days">
+                  <option value="0">0</option>
+                  <option value="1">0</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="time_in_hospital">Time in Hospital </label><br />
+                <input
+                  type="number"
+                  id="time_in_hospital"
+                  name="time_in_hospital"
+                  required
+                /><br />
+  
+                <label for="'num_lab_procedures'">Num Lab Procedures </label><br />
+                <input
+                  type="number"
+                  id="'num_lab_procedures'"
+                  name="'num_lab_procedures'"
+                  required
+                /><br />
+  
+                <label for="num_procedures">Num Procedures </label><br />
+                <input
+                  type="number"
+                  id="num_procedures"
+                  name="num_procedures"
+                  required
+                /><br />
+
+                <label for="num_medications">Num Medications </label><br />
+                <input
+                  type="number"
+                  id="num_medications"
+                  name="num_medications"
+                  required
+                /><br />
+
+                <label for="'number_diagnoses">Number Diagnosis</label><br />
+                <input
+                  type="number"
+                  id="'number_diagnoses"
+                  name="'number_diagnoses"
+                  required
+                /><br />
+                
+                <label for="medicaid">Mediacid</label><br>
+                <select id="medicaid" name="medicaid">
+                  <option value="0">True</option>
+                  <option value="1">False</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="had_emergency">Had Emergency</label><br>
+                <select id="had_emergency" name="had_emergency">
+                  <option value="0">True</option>
+                  <option value="1">False</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="had_inpatient_days">Had Inpatient Days</label><br>
+                <select id="had_inpatient_days" name="had_inpatient_days">
+                  <option value="0">True</option>
+                  <option value="1">False</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="medicare">Medicare</label><br>
+                <select id="medicare" name="medicare">
+                  <option value="0">True</option>
+                  <option value="1">False</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="had_outpatient_days'">Had Outpatient Days</label><br>
+                <select id="had_outpatient_days'" name="had_outpatient_days'">
+                  <option value="0">True</option>
+                  <option value="1">False</option>
+                </select>
+                <br>
+                <br>
+              
+  
+                <br /><button class="predict_btn" type="submit" value="Submit">
+                  Predict
+                </button>
+              </form>
+            </div>
+
+            <h2>{{prediction}}</h2>
+            <h3>{{description}}</h3>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

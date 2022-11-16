@@ -1,4 +1,5 @@
-from flask import Flask
+from cgitb import html
+from flask import Flask, render_template
 import model
 
 app = Flask(__name__)
@@ -7,6 +8,10 @@ app = Flask(__name__)
 def hello_world():
     pred = model.predict([2,0,0,2,1,5,41,0,1,0,1,2,2,1,1,0,False,False,False,False,False])
     return "<p>Result: "+ str(pred) +"</p>"
+
+# @app.route('/')
+# def homepage():
+#     return render_template('homepage.html')
 
 
 if __name__ == '__main__':
