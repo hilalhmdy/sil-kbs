@@ -13,12 +13,19 @@
   </head>
 
   <body>
-    <!-- This is an example component -->
-
+    
     <div class="container">
         <div class="index__title">
           Deabet condition in US Country
         </div>
+        {% if prediction != "GET" %}
+            <h3>Hasil : </h3>
+            {% if prediction %}
+              <h2 style="color: red;">Sesudah rawat inap 30 hari, harus perawatan kembali ke rumah sakit (rawat inap/rawat jalan)</h2>      
+            {% else %}
+              <h2>Sesudah rawat inap 30 hari, tidak harus perawatan kembali ke rumah sakit (cukup check up saja)</h2>
+            {% endif %}
+        {% endif %}
         <div class="left_right">
           <div class="left">
             <div>
@@ -175,40 +182,40 @@
   
                 <label for="medicare">Medicare</label><br>
                 <select id="medicare" name="medicare">
-                  <option value="0">True</option>
-                  <option value="1">False</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
                 </select>
                 <br>
                 <br>
                 
                 <label for="medicaid">Mediacid</label><br>
                 <select id="medicaid" name="medicaid">
-                  <option value="0">True</option>
-                  <option value="1">False</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
                 </select>
                 <br>
                 <br>
 
                 <label for="had_emergency">Had Emergency</label><br>
                 <select id="had_emergency" name="had_emergency">
-                  <option value="0">True</option>
-                  <option value="1">False</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
                 </select>
                 <br>
                 <br>
 
                 <label for="had_inpatient_days">Had Inpatient Days</label><br>
                 <select id="had_inpatient_days" name="had_inpatient_days">
-                  <option value="0">True</option>
-                  <option value="1">False</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
                 </select>
                 <br>
                 <br>
 
                 <label for="had_outpatient_days'">Had Outpatient Days</label><br>
                 <select id="had_outpatient_days'" name="had_outpatient_days'">
-                  <option value="0">True</option>
-                  <option value="1">False</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
                 </select>
                 <br>
                 <br>
@@ -219,9 +226,6 @@
                 </button>
               </form>
             </div>
-
-            <h2>{{prediction}}</h2>
-            <h3>{{description}}</h3>
           </div>
         </div>
     </div>

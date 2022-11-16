@@ -1,23 +1,23 @@
-from cgitb import html
-from crypt import methods
 from flask import Flask, render_template, request
 import model
 
 app = Flask(__name__)
 
-# @app.route("/")
-def hello_world():
-    pred = model.predict([2,0,0,2,1,5,41,0,1,0,1,2,2,1,1,0,False,False,False,False,False])
-    return "<p>Result: "+ str(pred) +"</p>"
-
 @app.route('/', methods=['POST', 'GET'])
 def homepage():
-    print(request.method)
-    if (request.method == 'POST'):
-        return "<p> Hello world </p>"
+    prediction = "GET"
 
-    if (request.method == 'GET'):
-        return render_template('homepage.html')
+    if (request.method == 'POST'):
+        payload = request.form.to_dict()
+        payload = list(payload.values())
+        payload = list(map(int, payload))
+        result = model.predict(payload)
+        if (result == 0):
+            prediction = False
+        else:
+            prediction= True
+  
+    return render_template('homepage.html', prediction=prediction)
     
 
 if __name__ == '__main__':
