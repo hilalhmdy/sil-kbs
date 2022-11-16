@@ -3,10 +3,10 @@
 ## Getting started
 
 ### Install All Dependencies
-  ```sh
-    pip install -r requirements.txt
-  ```
-### Run Flask
-  ```sh
-    python server.py
-  ```
+```sh
+pip install -r requirements.txt
+```
+### Run Server
+```sh
+python server.py
+```
